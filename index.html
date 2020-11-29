@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,50 +9,63 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
   crossorigin=""/>
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+ crossorigin=""></script>
   <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
-    
-  <title>Frontend Mentor | IP Address Tracker</title>
-
+<title>Frontend Mentor | IP Address Tracker</title>
 </head>
-<body>
+<body class="grid-container">
 
-  <h1>IP Address Tracker</h1>
+<div class="background-pattern"></div>
 
-  <form id="ip-tracker" class="" action="#" onsubmit="" novalidate> 
-    <div>
-    <label for="ip-tracker"></label>
-      <input id="ip-input" type="" placeholder="Search for any IP address or domain" name="ip-tracker"></input>
-      <button class="submit-button" type="submit"><img src="./images/icon-arrow.svg"></img></button>
-    </div>
-
-    </form>
+  <section class="main-info">
+    <h1>IP Address Tracker</h1>
   
+    <form id="ip-tracker" class="form" action="" onsubmit="" novalidate> 
+      
+      <label for="ip-tracker"></label>
+        <input id="ip-input" type="text" placeholder="Search for any IP address or domain" name="ip-tracker"></input>
+        <button id="submit-button" class="submit-button" onclick="" type="submit"><img src="./images/icon-arrow.svg"></img></button> 
+  
+      </form>
+      <p id="warning-text" class="hidden warning-text">Pls enter a valid ip</p>
+    
+  
+    <div class="info-panel">
+      <div class="info-container">
+        <p class="info-label">IP Address</p>
+        <div id="ip_address_info" class="info">Placeholder for info</div>
+      </div>
 
- <section class="info-panel">
-    <p class="info-label">IP Address</p>
-    <div>Placeholder for info</div>
-    <p class="info-label">Location</p>
-    <div>Placeholder for info</div>
-    <p class="info-label">Timezone</p>
-    <div>Placeholder for info</div>
-    <p class="info-label">UTC</p> <!-- add offset value dynamically using the API -->
-    <div>Placeholder for info</div>
-    <p class="info-label">ISP</p>
- </section>
+      <div class="info-container">
+        <p class="info-label">Location</p>
+        <div id="location_info" class="info">Placeholder for info</div>
+      </div>
 
-  <div class="map">
-    <p>the map goes here</p>
-  </div>
+      <div class="info-container">
+        
+        <p class="info-label">Timezone</p>
+        <!-- add offset value dynamically using the API -->
+        <div class="info"> <span id="utc"></span><span id="time_zone">Placeholder for info</span></div>
+      </div>
+      
+      <div class="info-container">
+        <p class="info-label">ISP</p>
+        <div id="isp_info" class="info">Placeholder for info</div>
+      </div>
+    </div>
+  </section>
+  
+  <div id="map" class="map"></div>
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://github.com/heikergil">Heiker Gil</a>.
   </div>
   <script src="./js/app.js"></script>
-  <!-- Make sure you put this AFTER Leaflet's CSS -->
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
- integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
- crossorigin=""></script>
+  
 </body>
 </html>
