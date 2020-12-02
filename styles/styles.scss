@@ -1,0 +1,159 @@
+@use 'reset.css';
+
+body {  
+    font-family: 'Rubik', sans-serif;
+}
+
+h1 {
+    margin: 0 0 10px 0;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    margin: 15px 0;
+
+}
+
+input {
+    padding: 0 20px;
+    height: 50px;
+    width: 225px;
+    border-radius: 15px;
+    border: none;
+    font-size: 0.7em;
+    color: black;
+}
+
+input:focus {
+    outline: none;
+}
+
+.submit-button {
+    margin: 0;
+    margin-left: -10px;
+    width: 50px;
+    border: none;
+    background-color: black;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    img {
+        margin: 0;
+    }
+}
+.grid-container {
+    min-width: 300px;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 0.25fr 0.25fr 1fr 1fr 1fr 1fr 0.25fr 0.25fr;
+    grid-template-rows: 0.25fr 1fr 1fr 1fr 1fr 1fr 1fr 0.25fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      ". . . . . . . ."
+      ". . . . . . . ."
+      ". . . . . . . ."
+      ". . . . . . . ."
+      ". . . . . . . ."
+      ". . . . . . . ."
+      ". . . . . . . ."
+      ". . . . . . . .";
+  }
+
+  .background-pattern  {
+    background-color: burlywood;
+    grid-column-start: 1;
+    grid-column-end:9;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    background-image: url(../images/pattern-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+    
+  .main-info {
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column-start: 3;
+    grid-column-end:7;
+    grid-row-start: 2;
+    grid-row-end: 6;
+    z-index: 99;
+    
+  }
+
+    .warning {
+        border: red 2px solid;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .warning-text {
+        color: red;
+        margin:0 0 10px 0;
+        background-color: white;
+        border-radius: 10px;
+        padding: 10px 20px;
+    }
+
+  .map {
+    grid-column-start: 1;
+    grid-column-end:9;
+    grid-row-start: 4;
+    grid-row-end: 8;
+    background-color: blue;
+    z-index: 1;
+
+  }
+
+  h1 {
+      color: white;
+      font-size: 1.5em;
+      font-weight: 600;
+  }
+
+  .info-panel {
+    background-color: white;
+    padding: 20px 25px;
+    width: 300px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    
+      }
+
+      .info-container {
+          text-align: center;
+          margin: 10px 0;
+      }
+.info-label {
+    font-size: 0.7em;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color:hsl(0, 0%, 59%);
+      }
+ .info {
+     color: hsl(0, 0%, 17%);
+     font-weight: 600;
+
+ }
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end:9;
+    grid-row-start: 8;
+    grid-row-end: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+//comments
+.attribution a { color: hsl(228, 45%, 44%); }
