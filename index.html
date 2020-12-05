@@ -21,8 +21,8 @@
 
 <div class="background-pattern"></div>
 
-  <section class="main-info">
-    <h1>IP Address Tracker</h1>
+  
+    <h1 class="title">IP Address Tracker</h1>
   
     <form id="ip-tracker" class="form" action="" onsubmit="" novalidate> 
       
@@ -31,10 +31,11 @@
         <button id="submit-button" class="submit-button" onclick="" type="submit"><img src="./images/icon-arrow.svg"></img></button> 
   
       </form>
-      <p id="warning-text" class="hidden warning-text">Pls enter a valid ip</p>
+      
     
   
     <div class="info-panel">
+      <p id="warning-text" class="hidden warning-text">Pls enter a valid ip</p>
       <div class="info-container">
         <p class="info-label">IP Address</p>
         <div id="ip_address_info" class="info">Placeholder for info</div>
@@ -48,7 +49,6 @@
       <div class="info-container">
         
         <p class="info-label">Timezone</p>
-        <!-- add offset value dynamically using the API -->
         <div class="info"> <span id="utc"></span><span id="time_zone">Placeholder for info</span></div>
       </div>
       
@@ -57,7 +57,7 @@
         <div id="isp_info" class="info">Placeholder for info</div>
       </div>
     </div>
-  </section>
+  
   
   <div id="map" class="map"></div>
   

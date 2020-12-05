@@ -7,11 +7,11 @@ function ValidateIPaddress(ipaddress)
 {
  if (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(ipaddress))
   {
-    document.getElementById('ip-tracker').classList.remove('warning');
+    document.getElementById('ip-input').classList.remove('warning');
     document.getElementById('warning-text').classList.add('hidden');
     return (true);
   }
-    document.getElementById('ip-tracker').classList.add('warning');
+    document.getElementById('ip-input').classList.add('warning');
     document.getElementById('warning-text').classList.remove('hidden');
     console.log("You have entered an invalid IP address!");
     return (false);
@@ -48,7 +48,13 @@ function ValidateIPaddress(ipaddress)
             lat = data.location.lat;
             lng = data.location.lng;
 
-        var mymap = L.map('map').setView([lat, lng], 13);
+        var mymap = L.map('map').setView([lat, lng], 10);
+
+        let myIcon = L.icon({
+            iconUrl: './images/icon-location.svg',
+            iconAnchor: [22, 94],
+            popupAnchor: [-3, -76],
+        });
 
          L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
                 attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -58,6 +64,11 @@ function ValidateIPaddress(ipaddress)
                 zoomOffset: -1,
                 accessToken: 'pk.eyJ1IjoiZXhwb25lbnRpYWwiLCJhIjoiY2tpMXEzdGczMG56ZDJ5bXN1dWljNm1uaSJ9.Woneln9FvtHIeqAEShnr2A'
                 }).addTo(mymap);
+
+                let marker = L.marker([lat, lng], {icon: myIcon}).addTo(mymap);
+
+
+
 
 
                 form_submit.addEventListener('click', function(event) {
@@ -97,6 +108,7 @@ function ValidateIPaddress(ipaddress)
                         let lng = data.location.lng;
     
                         mymap.setView([lat,lng], 13);
+                        marker.setLatLng([lat, lng]);
                         
                 });
     
